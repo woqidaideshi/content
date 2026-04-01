@@ -1,4 +1,4 @@
-{{% if 'ubuntu' in product %}}
+{{% if 'ubuntu' in product or product == 'openruyi' %}}
 test -n "$GRUB_CFG_ROOT" || GRUB_CFG_ROOT=/boot/grub
 {{% else %}}
 test -n "$GRUB_CFG_ROOT" || GRUB_CFG_ROOT=/boot/grub2
@@ -7,6 +7,8 @@ test -n "$GRUB_CFG_ROOT" || GRUB_CFG_ROOT=/boot/grub2
 function set_grub_uefi_root {
 	if grep NAME /etc/os-release | grep -iq fedora; then
 		GRUB_CFG_ROOT=/boot/grub2
+	elif grep NAME /etc/os-release | grep -iq "openruyi"; then
+		GRUB_CFG_ROOT=/boot/grub
 	elif grep NAME /etc/os-release | grep -iq "Red Hat"; then
 		if grep VERSION /etc/os-release | grep -q '9\.'; then
 			GRUB_CFG_ROOT=/boot/grub2

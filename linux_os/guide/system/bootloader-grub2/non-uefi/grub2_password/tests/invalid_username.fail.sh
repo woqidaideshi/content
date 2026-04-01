@@ -7,7 +7,7 @@
 
 make_grub_password
 
-{{% if 'ubuntu' in product %}}
+{{% if 'ubuntu' in product or product == 'openruyi' %}}
 test -n "$GRUB_CFG_ROOT" || GRUB_CFG_ROOT=/boot/grub
 {{% else %}}
 test -n "$GRUB_CFG_ROOT" || GRUB_CFG_ROOT=/boot/grub2

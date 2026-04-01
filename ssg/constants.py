@@ -53,6 +53,7 @@ product_directories = [
     'rhcos4',
     'ol7', 'ol8', 'ol9', 'ol10',
     'openeuler2203',
+    'openruyi',
     'opensuse',
     'openembedded',
     'rhel8', 'rhel9', 'rhel10',
@@ -228,6 +229,7 @@ FULL_NAME_TO_PRODUCT_MAPPING = {
     "Oracle Linux 9": "ol9",
     "Oracle Linux 10": "ol10",
     "openEuler 2203": "openeuler2203",
+    "openRuyi": "openruyi",
     "openSUSE": "opensuse",
     "Red Hat Enterprise Linux 8": "rhel8",
     "Red Hat Enterprise Linux 9": "rhel9",
@@ -289,7 +291,7 @@ REFERENCES = dict(
 
 
 MULTI_PLATFORM_LIST = ["rhel", "fedora", "rhv", "debian", "ubuntu",
-                       "openeuler", "kylinserver",
+                       "openeuler", "openruyi", "kylinserver",
                        "opensuse", "sle", "tencentos", "ol", "ocp", "rhcos",
                        "example", "eks", "alinux", "anolis", "openembedded", "al",
                        "slmicro", "almalinux"]
@@ -304,6 +306,7 @@ MULTI_PLATFORM_MAPPING = {
     "multi_platform_fedora": ["fedora"],
     "multi_platform_kylinserver": ["kylinserver10"],
     "multi_platform_openeuler": ["openeuler2203"],
+    "multi_platform_openruyi": ["openruyi"],
     "multi_platform_opensuse": ["opensuse"],
     "multi_platform_ol": ["ol7", "ol8", "ol9", "ol10"],
     "multi_platform_ocp": ["ocp4"],
@@ -434,6 +437,7 @@ MAKEFILE_ID_TO_PRODUCT_MAP = {
     'eap': 'JBoss Enterprise Application Platform',
     'fuse': 'JBoss Fuse',
     'openeuler': 'openEuler',
+    'openruyi': 'openRuyi',
     'opensuse': 'openSUSE',
     'sle': 'SUSE Linux Enterprise',
     'slmicro': 'SUSE Linux Enterprise Micro',

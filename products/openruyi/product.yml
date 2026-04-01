@@ -1,0 +1,24 @@
+product: openruyi
+full_name: openRuyi
+arch: riscv64
+type: platform
+
+benchmark_id: OPENRUYI
+benchmark_root: "../../linux_os/guide"
+
+profiles_root: "./profiles"
+
+pkg_manager: "dnf"
+pkg_manager_config_file: "/etc/yum.conf"
+
+init_system: "systemd"
+
+cpes_root: "../../shared/applicability"
+cpes:
+  - openruyi:
+      name: "cpe:/o:openruyi:openruyi:creek"
+      title: "openRuyi Creek"
+      check_id: installed_OS_is_openruyi
+
+reference_uris:
+  cis: 'https://workbench.cisecurity.org/communities/101'
