@@ -43,5 +43,6 @@ template:
         packagename@sle15: rsync
         packagename@slmicro5: rsync
         packagename@openeuler2203: rsync
+        packagename@openruyi: rsync
         servicename@ubuntu2404: rsync
         packagename@ubuntu2404: rsync

@@ -35,7 +35,7 @@ args:
   chrony:
     pkgname: chrony
   dnf:
-    {{% if product == "fedora" %}}
+    {{% if product in ["fedora", "openruyi"] %}}
     pkgname: dnf5
     {{% else %}}
     pkgname: dnf
@@ -113,7 +113,7 @@ args:
     pkgname: rsh-server
   shadow-utils:
     {{% if pkg_system == "rpm" %}}
-    {{% if 'sle' in product or 'slmicro' in product or product in ["kylinserver10", "openeuler2203"] %}}
+    {{% if 'sle' in product or 'slmicro' in product or product in ["kylinserver10", "openeuler2203", "openruyi"] %}}
       pkgname: shadow
     {{% else %}}
       pkgname: shadow-utils
@@ -166,3 +166,9 @@ args:
     pkgname: rsyslog
   rootfiles:
     pkgname: rootfiles
+  kernel:
+    {{% if product == "openruyi" %}}
+    pkgname: linux
+    {{% else %}}
+    pkgname: kernel
+    {{% endif %}}
