@@ -1637,6 +1637,9 @@ Part of the grub2_bootloader_argument template.
 {{% if product in ['sle12', 'sle15', 'sle16', 'slmicro5'] %}}
 - name: Update grub defaults and the bootloader menu
   ansible.builtin.command: /usr/sbin/grub2-mkconfig -o {{{ grub2_boot_path }}}/grub.cfg
+{{% elif product == 'openruyi' %}}
+- name: Update grub defaults and the bootloader menu
+  ansible.builtin.command: /usr/sbin/grub-mkconfig -o {{{ grub2_boot_path }}}/grub.cfg
 {{% elif 'debian' in product %}}
 - name: Update grub defaults and the bootloader menu
   ansible.builtin.command: /usr/sbin/update-grub
@@ -1693,6 +1696,9 @@ Part of the grub2_bootloader_argument_absent template.
 {{% if product in ['sle12', 'sle15', 'sle16'] %}}
 - name: Update grub defaults and the bootloader menu
   ansible.builtin.command: /usr/sbin/grub2-mkconfig -o {{{ grub2_boot_path }}}/grub.cfg
+{{% elif product == 'openruyi' %}}
+- name: Update grub defaults and the bootloader menu
+  ansible.builtin.command: /usr/sbin/grub-mkconfig -o {{{ grub2_boot_path }}}/grub.cfg
 {{% elif 'debian' in product %}}
 - name: Update grub defaults and the bootloader menu
   ansible.builtin.command: /usr/sbin/update-grub

@@ -1262,6 +1262,8 @@ Part of the grub2_bootloader_argument(_absent) templates.
 {{% macro grub_command(action, arg_name_value=None) -%}}
 {{%- if "update-grub" in grub_helper_executable -%}}
     {{%- set grub_helper_args = [] -%}}
+{{%- elif "grub-mkconfig" in grub_helper_executable -%}}
+    {{%- set grub_helper_args = ["-o " ~ grub2_boot_path ~ "/grub.cfg"] -%}}
 {{%- elif "grub2-mkconfig" in grub_helper_executable -%}}
     {{%- if 'suse' in families -%}}
     {{%- set grub_helper_args = ["-o " ~ grub2_boot_path ~ "/grub.cfg"] -%}}

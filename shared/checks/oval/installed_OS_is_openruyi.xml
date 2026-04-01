@@ -1,0 +1,25 @@
+<def-group>
+  <definition class="inventory" id="installed_OS_is_openruyi" version="3">
+    <metadata>
+      <title>Installed operating system is openRuyi</title>
+      <affected family="unix">
+        <platform>multi_platform_all</platform>
+      </affected>
+      <reference ref_id="cpe:/o:openruyi:openruyi:creek" source="CPE" />
+      <description>The operating system installed on the system is openRuyi</description>
+    </metadata>
+    <criteria operator="AND">
+      <extend_definition comment="Installed OS is part of the Unix family" definition_ref="installed_OS_is_part_of_Unix_family" />
+      <criterion comment="openruyi-release RPM packages are installed" test_ref="test_openruyi_release_rpm" />
+      <extend_definition comment="Architecture is riscv64" definition_ref="proc_sys_kernel_osrelease_arch_riscv64" />
+    </criteria>
+  </definition>
+
+  <linux:rpminfo_test check="all" check_existence="at_least_one_exists" comment="openruyi-release RPM packages are installed" id="test_openruyi_release_rpm" version="1">
+    <linux:object object_ref="object_openruyi_release_rpm" />
+  </linux:rpminfo_test>
+  <linux:rpminfo_object id="object_openruyi_release_rpm" version="1">
+    <linux:name operation="pattern match">open[rR]uyi-release.*</linux:name>
+  </linux:rpminfo_object>
+
+</def-group>

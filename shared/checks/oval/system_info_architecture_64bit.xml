@@ -19,6 +19,8 @@
       definition_ref="system_info_architecture_aarch_64" />
       <extend_definition comment="Generic test for s390x architecture"
       definition_ref="system_info_architecture_s390_64" />
+      <extend_definition comment="Generic test for riscv64 architecture"
+      definition_ref="system_info_architecture_riscv_64" />
     </criteria>
   </definition>
 

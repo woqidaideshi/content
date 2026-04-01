@@ -1,0 +1,5 @@
+name: cpe:/a:riscv64_arch
+title: System architecture is RISCV64
+check_id: proc_sys_kernel_osrelease_arch_riscv64
+bash_conditional: {{{ bash_arch_conditional("riscv64") }}}
+ansible_conditional: 'ansible_architecture == "riscv64"'

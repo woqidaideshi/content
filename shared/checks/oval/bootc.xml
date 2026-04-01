@@ -14,6 +14,8 @@
   </definition>
 {{% if product == "fedora" or "rhel" in product %}}
 {{% set kernel_package = "kernel-core" %}}
+{{% elif product == "openruyi" %}}
+{{% set kernel_package = "linux-core" %}}
 {{% else %}}
 {{% set kernel_package = "kernel" %}}
 {{% endif %}}
