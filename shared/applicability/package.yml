@@ -168,7 +168,13 @@ args:
     pkgname: rootfiles
   kernel:
     {{% if product == "openruyi" %}}
-    pkgname: linux
+      pkgname: linux
     {{% else %}}
-    pkgname: kernel
+      pkgname: kernel
+    {{% endif %}}
+  grub2:
+    {{% if product == "openruyi" %}}
+      pkgname: grub
+    {{% else %}}
+      pkgname: grub2-common
     {{% endif %}}
