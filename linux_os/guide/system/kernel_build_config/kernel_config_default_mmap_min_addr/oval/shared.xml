@@ -16,6 +16,12 @@
           <criterion comment="Check presence of build configuration of installed kernels"
           test_ref="test_kernel_config_default_mmap_min_addr_aarch64" />
         </criteria>
+        <criteria operator="AND">
+          <criterion comment="Check architecture is riscv64"
+          test_ref="test_proc_sys_kernel_osrelease_arch_riscv64" />
+          <criterion comment="Check presence of build configuration of installed kernels"
+          test_ref="test_kernel_config_default_mmap_min_addr_riscv64" />
+        </criteria>
       </criteria>
       <criterion comment="Ensure all kernels have the config"
       test_ref="test_kernel_config_default_mmap_min_addr_all_kernels" />
@@ -34,6 +40,12 @@
     <ind:object object_ref="object_kernel_config_default_mmap_min_addr" />
     <ind:state state_ref="state_kernel_config_default_mmap_min_addr_aarch64" />
   </ind:textfilecontent54_test>
+  <ind:textfilecontent54_test check="all"
+  comment="Check /boot/config-.* files for CONFIG_DEFAULT_MMAP_MIN_ADDR=32768"
+  id="test_kernel_config_default_mmap_min_addr_riscv64" version="1">
+    <ind:object object_ref="object_kernel_config_default_mmap_min_addr" />
+    <ind:state state_ref="state_kernel_config_default_mmap_min_addr_riscv64" />
+  </ind:textfilecontent54_test>
 
   <ind:textfilecontent54_object id="object_kernel_config_default_mmap_min_addr" version="1">
     <ind:filepath operation="pattern match">^/boot/config-.*$</ind:filepath>
@@ -45,6 +57,9 @@
     <ind:subexpression operation="equals" datatype="string">65536</ind:subexpression>
   </ind:textfilecontent54_state>
   <ind:textfilecontent54_state id="state_kernel_config_default_mmap_min_addr_aarch64" version="1">
+    <ind:subexpression operation="equals" datatype="string">32768</ind:subexpression>
+  </ind:textfilecontent54_state>
+  <ind:textfilecontent54_state id="state_kernel_config_default_mmap_min_addr_riscv64" version="1">
     <ind:subexpression operation="equals" datatype="string">32768</ind:subexpression>
   </ind:textfilecontent54_state>
 
@@ -89,6 +104,23 @@
       <unix:filename operation="pattern match">^config-.*$</unix:filename>
   </unix:file_object>
 
+  <ind:textfilecontent54_test check="all" check_existence="all_exist"
+      comment="proc_sys_kernel is for riscv64 architecture"
+      id="test_proc_sys_kernel_osrelease_arch_riscv64"
+  version="1">
+    <ind:object object_ref="object_proc_sys_kernel_osrelease_arch_riscv64" />
+    <ind:state state_ref="state_proc_sys_kernel_osrelease_arch_riscv64" />
+  </ind:textfilecontent54_test>
+
+  <ind:textfilecontent54_object id="object_proc_sys_kernel_osrelease_arch_riscv64" version="1">
+    <ind:filepath>/proc/sys/kernel/osrelease</ind:filepath>
+    <ind:pattern operation="pattern match">^.*\.(.*)$</ind:pattern>
+    <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+  </ind:textfilecontent54_object>
+
+  <ind:textfilecontent54_state id="state_proc_sys_kernel_osrelease_arch_riscv64" version="1">
+    <ind:subexpression datatype="string" operation="pattern match">^riscv64$</ind:subexpression>
+  </ind:textfilecontent54_state>
 
   <ind:textfilecontent54_test check="all" check_existence="all_exist"
       comment="proc_sys_kernel is for aarch64 architecture"

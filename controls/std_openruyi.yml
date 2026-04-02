@@ -1463,17 +1463,22 @@ controls:
           - kernel_config_seccomp.severity=low
 
     - id: 3.6.1
-      title: Ensure Ntpd Configuration Correct
+      title: Ensure a single time synchronization daemon is in use (Automated)
       levels:
           - l2_server
       status: automated
       rules:
-          - service_ntpd_enabled
-          - service_ntpd_enabled.severity=low
-          - ntpd_configure_restrictions
-          - ntpd_configure_restrictions.severity=low
-          - ntpd_specify_remote_server
-          - ntpd_specify_remote_server.severity=low
+          - var_timesync_service=systemd-timesyncd
+          - package_chrony_installed
+          - service_chronyd_enabled
+          - service_chronyd_disabled
+          - package_timesyncd_installed
+          - service_timesyncd_enabled
+          - service_timesyncd_disabled
+          - ntp_single_service_active
+      notes: |
+          To select which timesync daemon to install and configure, use the
+          profile variable var_timesync_service.
 
     - id: 3.6.2
       title: Ensure Chrony Configuration Correct

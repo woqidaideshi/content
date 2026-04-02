@@ -1,7 +1,7 @@
 <def-group>
   <definition class="inventory" id="installed_OS_is_openruyi" version="3">
     <metadata>
-      <title>Installed operating system is Fedora</title>
+      <title>Installed operating system is openRuyi</title>
       <affected family="unix">
         <platform>multi_platform_all</platform>
       </affected>
