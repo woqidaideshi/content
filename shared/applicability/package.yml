@@ -166,15 +166,3 @@ args:
     pkgname: rsyslog
   rootfiles:
     pkgname: rootfiles
-  kernel:
-    {{% if product == "openruyi" %}}
-      pkgname: linux
-    {{% else %}}
-      pkgname: kernel
-    {{% endif %}}
-  grub2:
-    {{% if product == "openruyi" %}}
-      pkgname: grub
-    {{% else %}}
-      pkgname: grub2-common
-    {{% endif %}}
