@@ -1469,13 +1469,9 @@ controls:
       status: automated
       rules:
           - var_timesync_service=systemd-timesyncd
-          - package_chrony_installed
-          - service_chronyd_enabled
-          - service_chronyd_disabled
           - package_timesyncd_installed
           - service_timesyncd_enabled
-          - service_timesyncd_disabled
-          - ntp_single_service_active
+          - service_chronyd_disabled
       notes: |
           To select which timesync daemon to install and configure, use the
           profile variable var_timesync_service.

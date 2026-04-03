@@ -11,6 +11,7 @@
     <criteria operator="AND">
       <extend_definition comment="Installed OS is part of the Unix family" definition_ref="installed_OS_is_part_of_Unix_family" />
       <criterion comment="openruyi-release RPM packages are installed" test_ref="test_openruyi_release_rpm" />
+      <extend_definition comment="Architecture is riscv64" definition_ref="proc_sys_kernel_osrelease_arch_riscv64" />
     </criteria>
   </definition>
 
