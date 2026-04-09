@@ -19,7 +19,7 @@
     <linux:object object_ref="object_openruyi_release_rpm" />
   </linux:rpminfo_test>
   <linux:rpminfo_object id="object_openruyi_release_rpm" version="1">
-    <linux:name operation="pattern match">openRuyi-release.*</linux:name>
+    <linux:name operation="pattern match">open[rR]uyi-release.*</linux:name>
   </linux:rpminfo_object>
 
 </def-group>

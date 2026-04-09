@@ -139,27 +139,18 @@ controls:
           - sysctl_fs_protected_hardlinks.severity=high
 
     - id: 1.1.17
-      title: Ensure USB Disabled
-      levels:
-          - l2_server
-      status: automated
-      rules:
-          - kernel_module_usb-storage_disabled
-          - kernel_module_usb-storage_disabled.severity=low
-
-    - id: 1.1.18
       title: Ensure Different Data Store In Different Partitions
       levels:
           - l2_server
       status: planned
 
-    - id: 1.1.19
+    - id: 1.1.18
       title: Ensure LD_LIBRARY_PATH Correct
       levels:
           - l1_server
       status: planned
 
-    - id: 1.1.20
+    - id: 1.1.19
       title: Ensure User PATH Correct
       levels:
           - l1_server
@@ -816,15 +807,6 @@ controls:
       levels:
           - l2_server
       status: planned
-
-    - id: 2.6.2
-      title: Global Crypto Setting Correct
-      levels:
-          - l2_server
-      status: automated
-      rules:
-          - configure_crypto_policy
-          - configure_crypto_policy.severity=low
 
     - id: 3.1.1
       title: Ensure No Unusual Network Service

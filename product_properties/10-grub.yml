@@ -29,3 +29,8 @@ overrides:
   grub2_uefi_boot_path: "/boot/grub"
 {{% endif %}}
 {{% endif %}}
+{{% if product == "openruyi" %}}
+  grub2_boot_path: "/boot/grub"
+  grub2_uefi_boot_path: "/boot/grub"
+  grub_helper_executable: "grub-mkconfig"
+{{% endif %}}
