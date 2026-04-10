@@ -1209,11 +1209,7 @@ For more details on configuring kernel arguments in bootable container images, p
 {{% macro describe_kernel_build_config(config, value) -%}}
     The configuration that was used to build kernel is available at <tt>/boot/config-*</tt>.
     To check the configuration value for <tt>{{{ config }}}</tt>, run the following command:
-    {{% if product == "openruyi" %}}
-    <tt>zcat /proc/config.gz | grep {{{ config }}}</tt>
-    {{% else %}}
     <tt>grep {{{ config }}} /boot/config-*</tt>
-    {{% endif %}}
     {{% if value == "n" %}}
     Configs with value 'n' are not explicitly set in the file, so either commented lines or no
     lines should be returned.
