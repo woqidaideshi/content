@@ -1,0 +1,23 @@
+documentation_complete: true
+
+title: 'Empty link files are prohibited'
+
+description: |-
+    <p><tt>It can not be scanned automatically, please check it manually.</tt></p>
+    <p>If any symlink files have no camonical path, it should be removed.</p>
+    <ul>
+    <li>You can use below cli command to find out all symlink files which have no canonical path under current path:
+    <pre># find ./ -type l -follow</pre>
+    </li>
+    <li>Or find it under root path bug exclude some dirs:
+    <pre># find / -path /var -prune -o -path /run -prune -o -path /proc -prune -o -path /sys -prune -o -path /dev -prune -o -type l -follow</pre>
+    </li>
+    <li>Or find it under the whole disk partition:
+    <pre># find / -xdev -type l -follow</pre>
+    </li>
+    </ul>
+
+rationale: |-
+    If any symlink files have no camonical path, it should be removed.
+
+severity: high
