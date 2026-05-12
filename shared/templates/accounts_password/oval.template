@@ -1,4 +1,4 @@
-{{% if 'ol' in families or 'rhel' in product %}}
+{{% if 'ol' in families or 'rhel' in product or product == 'openruyi' %}}
 {{% set filepath_regex="^/etc/security/pwquality\.conf(\.d/[^/]+\.conf)?$" %}}
 {{% else %}}
 {{% set filepath_regex="^" + pwquality_path + "$" %}}
@@ -11,7 +11,7 @@
       <criteria operator="OR">
         <criterion comment="pwquality.conf" test_ref="test_password_pam_pwquality_{{{ VARIABLE }}}" />
       </criteria>
-      {{% if "ol" in families %}}
+      {{% if "ol" in families or product == "openruyi" %}}
       <criterion comment="{{{ VARIABLE }}} is not overwritten in system-auth"
         test_ref="test_password_pam_pwquality_{{{ VARIABLE }}}_not_overwritten"/>
       <criterion comment="{{{ VARIABLE }}} is not overwritten in password-auth"
@@ -20,7 +20,7 @@
     </criteria>
   </definition>
 
-  {{% if "ol" in families %}}
+  {{% if "ol" in families or product == "openruyi" %}}
   <ind:textfilecontent54_test check="all" check_existence="none_exist"
     comment="check the configuration of /etc/pam.d/system-auth doens't override pwquality.conf"
     id="test_password_pam_pwquality_{{{ VARIABLE }}}_not_overwritten" version="1">
