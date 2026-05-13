@@ -1,6 +1,6 @@
 documentation_complete: true
 
-prodtype: openeuler2203,openeuler2403
+prodtype: openruyi
 
 title: 'Enable haveged service'
 
