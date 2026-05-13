@@ -18,7 +18,7 @@ cpes:
   - openruyi:
       name: "cpe:/o:openruyi:openruyi:creek"
       title: "openRuyi Creek"
-      check_id: installed_OS_is_openruyi
+      check_id: installed_OS_is_openruyi_riscv
 
 reference_uris:
   cis: 'https://workbench.cisecurity.org/communities/101'
