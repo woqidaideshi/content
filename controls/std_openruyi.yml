@@ -64,62 +64,6 @@ controls:
       - file_permissions_unauthorized_world_writable
       - file_permissions_unauthorized_world_writable.severity=high
 
-  - id: 1.1.7_umount_unnecessary_file_system
-    title: Umount Unnecessary File System
-    levels:
-      - base
-    status: manual
-    rules:
-      - removed_unnecessary_file_mount
-      - removed_unnecessary_file_mount.severity=high
-
-  - id: 1.1.8_mount_as_readonly
-    title: Ensure Mount As Readonly If No Need To Write
-    levels:
-      - base
-    status: manual
-    rules:
-      - mount_only_no_modified_partitionsread
-      - mount_only_no_modified_partitionsread.severity=high
-
-  - id: 1.1.9_mount_as_nodev
-    title: Ensure Mount As Nodev
-    levels:
-      - base
-    status: manual
-    rules:
-      - mount_nodev_mode_partitions
-      - mount_nodev_mode_partitions.severity=high
-
-  - id: 1.1.10_mount_as_noexec
-    title: Ensure Mount As Noexec
-    levels:
-      - base
-    status: manual
-    rules:
-      - mount_noexec_mode_partitions
-      - mount_noexec_mode_partitions.severity=high
-
-  - id: 1.1.11_mount_as_noexec_nodev_for_removable
-    title: Ensure Mount As Noexec And Nodev For Removable Device
-    levels:
-      - base
-    status: automated
-    rules:
-      - mount_option_noexec_removable_partitions
-      - mount_option_noexec_removable_partitions.severity=high
-      - mount_option_nodev_removable_partitions
-      - mount_option_nodev_removable_partitions.severity=high
-
-  - id: 1.1.12_mount_as_nosuid
-    title: Ensure Mount As Nosuid
-    levels:
-      - base
-    status: manual
-    rules:
-      - mounted_nosuid_mode_partitions
-      - mounted_nosuid_mode_partitions.severity=high
-
   - id: 1.1.13_remove_unnecessary_suid_sgid
     title: Ensure Remove Unnecessary SUID And SGID
     levels:
@@ -131,24 +75,6 @@ controls:
       - file_permissions_unauthorized_sgid
       - file_permissions_unauthorized_sgid.severity=high
 
-  - id: 1.1.14_file_permission_minimize
-    title: Ensure File Permission Minimize
-    levels:
-      - base
-    status: manual
-    rules:
-      - file_permission_minimum
-      - file_permission_minimum.severity=high
-
-  - id: 1.1.15_ulimit_correctly
-    title: Ensure Ulimit Correctly
-    levels:
-      - base
-    status: manual
-    rules:
-      - file_opened_count_limited
-      - file_opened_count_limited.severity=high
-
   - id: 1.1.16_symlinks_hardlinks_protected
     title: Ensure Symlinks And Hardlinks Protected
     levels:
@@ -159,42 +85,6 @@ controls:
       - sysctl_fs_protected_symlinks.severity=high
       - sysctl_fs_protected_hardlinks
       - sysctl_fs_protected_hardlinks.severity=high
-
-  - id: 1.1.17_usb_disabled
-    title: Ensure USB Disabled
-    levels:
-      - base
-    status: automated
-    rules:
-      - kernel_module_usb-storage_disabled
-      - kernel_module_usb-storage_disabled.severity=low
-
-  - id: 1.1.18_partitions_management
-    title: Ensure Different Data Store In Different Partitions
-    levels:
-      - base
-    status: manual
-    rules:
-      - partitions_manage_hard_drive_data
-      - partitions_manage_hard_drive_data.severity=high
-
-  - id: 1.1.19_library_path_correct
-    title: Ensure LD_LIBRARY_PATH Correct
-    levels:
-      - base
-    status: manual
-    rules:
-      - define_ld_lib_path_correctly
-      - define_ld_lib_path_correctly.severity=high
-
-  - id: 1.1.20_user_path_correct
-    title: Ensure User PATH Correct
-    levels:
-      - base
-    status: manual
-    rules:
-      - define_path_strictly
-      - define_path_strictly.severity=low
 
   - id: 1.2.1_ftp_not_installed
     title: Ensure FTP Not Installed
@@ -328,32 +218,6 @@ controls:
       - package_openldap-clients_removed
       - package_openldap-clients_removed.severity=high
 
-  - id: 1.2.15_no_network_sniffing_software
-    title: Ensure Network Sniffing Software Removed
-    levels:
-      - base
-    status: manual
-    rules:
-      - network_sniffing_tools
-      - network_sniffing_tools.severity=high
-
-  - id: 1.2.16_no_debug_tools
-    title: Ensure Debug Tools Removed
-    levels:
-      - base
-    status: manual
-    rules:
-      - debugging_tools
-      - debugging_tools.severity=high
-
-  - id: 1.2.17_no_compiler_tools
-    title: Ensure Compiler Tools Removed
-    levels:
-      - base
-    status: manual
-    rules:
-      - development_and_compilation_tools
-      - development_and_compilation_tools.severity=high
 
   - id: 1.2.18_xwindow_not_installed
     title: Ensure X Window Not Installed
@@ -417,34 +281,6 @@ controls:
     rules:
       - service_dhcpd_disabled
       - service_dhcpd_disabled.severity=low
-
-
-  - id: 2.1.1_login_accounts_are_necessary
-    title: Ensure All Login Accounts Are Necessary
-    levels:
-      - base
-    status: manual
-    rules:
-      - login_accounts_are_necessary
-      - login_accounts_are_necessary.severity=high
-
-  - id: 2.1.2_no_unused_accounts
-    title: Ensure No Unused Accounts
-    levels:
-      - base
-    status: manual
-    rules:
-      - accounts_are_necessary
-      - accounts_are_necessary.severity=high
-
-  - id: 2.1.3_different_accounts_have_different_groupid
-    title: Ensure Different Accounts Have Different GroupID
-    levels:
-      - base
-    status: automated
-    rules:
-      - account_unique_group_id
-      - account_unique_group_id.severity=high
 
   - id: 2.1.4_no_uid_0_except_root
     title: Ensure Only Root's UID Is 0
@@ -631,24 +467,6 @@ controls:
       - accounts_password_pam_unix_remember.severity=high
       - var_password_pam_unix_remember=5
 
-  - id: 2.2.3_verify_old_password
-    title: Ensure Old Password Verified
-    levels:
-      - base
-    status: automated
-    rules:
-      - verify_owner_password
-      - verify_owner_password.severity=high
-
-  - id: 2.2.4_no_username_in_password
-    title: Ensure Password Not Contain User Name
-    levels:
-      - base
-    status: automated
-    rules:
-      - no_name_contained_in_password
-      - no_name_contained_in_password.severity=high
-
   - id: 2.2.5_strong_hash_algorithm_for_password
     title: Ensure Using Strong Hash Algorithm To Encipher Password
     levels:
@@ -716,15 +534,6 @@ controls:
       - require_emergency_target_auth
       - require_emergency_target_auth.severity=high
 
-  - id: 2.2.11_chpwd_at_first_login
-    title: Ensure Password Changed At First Login
-    levels:
-      - base
-    status: manual
-    rules:
-      - first_logging_change_password
-      - first_logging_change_password.severity=high
-
   - id: 2.3.1_account_lock_after_accessing_fail
     title: Ensure Account Locked After Accessing Fail
     levels:
@@ -754,8 +563,6 @@ controls:
       - base
     status: automated
     rules:
-      - warning_banners
-      - warning_banners.severity=high
       - file_groupowner_etc_issue
       - file_groupowner_etc_issue.severity=high
       - file_groupowner_etc_issue_net
@@ -783,15 +590,6 @@ controls:
     rules:
       - sshd_enable_warning_banner_net
       - sshd_enable_warning_banner_net.severity=high
-
-  - id: 2.4.1_histsize_limited
-    title: Ensure HISTSIZE Limited
-    levels:
-      - base
-    status: automated
-    rules:
-      - historical_command_records_limited
-      - historical_command_records_limited.severity=low
 
   - id: 2.4.2_selinux_enforce
     title: Ensure SELinux Enforce
@@ -829,42 +627,6 @@ controls:
       - sudo_restrict_privilege_elevation_to_authorized
       - sudo_restrict_privilege_elevation_to_authorized.severity=high
 
-  - id: 2.4.6_no_low-privilege_user_writable_files_with_sudo
-    title: Ensure No Files In /etc/sudoers Can Be Write By Low-privilege User
-    levels:
-      - base
-    status: manual
-    rules:
-      - sudoers_disable_low_privileged_configure
-      - sudoers_disable_low_privileged_configure.severity=high
-
-  - id: 2.4.7_cannot_use_pkexec_escalate
-    title: Ensure Low-privilege User Cannot Escalate By Pkexec
-    levels:
-      - base
-    status: automated
-    rules:
-      - only_root_can_run_pkexec
-      - only_root_can_run_pkexec.severity=high
-
-  - id: 2.4.8_always_set_path_config
-    title: Ensure ALWAYS_SET_PATH Configurated
-    levels:
-      - base
-    status: automated
-    rules:
-      - su_always_set_path
-      - su_always_set_path.severity=high
-
-  - id: 2.4.9_root_can_not_login_local
-    title: Ensure Root Can Not Login Local
-    levels:
-      - base
-    status: manual
-    rules:
-      - disable_root_accessing_system
-      - disable_root_accessing_system.severity=low
-
   - id: 2.4.10_not_use_unconfined_service_t
     title: Ensure Not Run Files with unconfined_service_t Flag
     levels:
@@ -873,15 +635,6 @@ controls:
     rules:
       - selinux_confinement_of_daemons
       - selinux_confinement_of_daemons.severity=low
-
-  - id: 2.5.1_ima_enabled
-    title: Ensure IMA Enabled
-    levels:
-      - base
-    status: manual
-    rules:
-      - ima_verification
-      - ima_verification.severity=low
 
   - id: 2.5.2_aide_enabled
     title: Ensure AIDE Enabled
@@ -912,7 +665,6 @@ controls:
       - configure_crypto_policy
       - configure_crypto_policy.severity=low
 
-
   - id: 3.1.1_unusual_network_service_not_used
     title: Ensure No Unusual Network Service
     levels:
@@ -941,14 +693,6 @@ controls:
     rules:
       - service_firewalld_enabled
       - service_firewalld_enabled.severity=low
-
-  - id: 3.2.2_firewalld_default_zone_correct
-    title: Ensure firewalld default zone is set (Automated)
-    levels:
-      - base
-    status: automated
-    rules:
-      - set_firewalld_default_zonezone
 
     title: Ensure Firewalld Set Correct Interface Zone
     levels:
@@ -998,23 +742,6 @@ controls:
       - set_ipv6_loopback_traffic
       - set_ipv6_loopback_traffic.severity=low
 
-  - id: 3.2.8_iptables_input_rules
-    title: Ensure Iptables Input Rules Set
-    levels:
-      - base
-    status: manual
-    rules:
-      - iptables_input_policy_configured_correctly
-      - iptables_input_policy_configured_correctly.severity=low
-
-  - id: 3.2.9_iptables_output_rules
-    title: Ensure Iptables Output Rules Set
-    levels:
-      - base
-    status: manual
-    rules:
-      - iptables_output_policy_configured_correctly
-      - iptables_output_policy_configured_correctly.severity=low
 
   - id: 3.2.10_iptables_input_output_connection_rules
     title: Ensure Iptables Input Output Connection Rules Set
@@ -1051,24 +778,6 @@ controls:
     rules:
       - set_nftables_loopback_traffic
       - set_nftables_loopback_traffic.severity=low
-
-  - id: 3.2.14_nftables_input_rules
-    title: Ensure Nftables Input Rules Set
-    levels:
-      - base
-    status: manual
-    rules:
-      - nftables_input_policy_configured_correctly
-      - nftables_input_policy_configured_correctly.severity=low
-
-  - id: 3.2.15_nftables_output_rules
-    title: Ensure Nftables Output Rules Set
-    levels:
-      - base
-    status: manual
-    rules:
-      - nftables_output_policy_configured_correctly
-      - nftables_output_policy_configured_correctly.severity=low
 
   - id: 3.2.16_nftables_input_output_connection_rules
     title: Ensure Nftables Input Output Connection Rules Set
