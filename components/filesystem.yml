@@ -197,6 +197,8 @@ rules:
 - sysctl_fs_protected_hardlinks
 - sysctl_fs_protected_regular
 - sysctl_fs_protected_symlinks
+- file_empty_link_prohibit
+- file_hidden_executable_prohibit
 templates:
 - mount
 - mount_option
