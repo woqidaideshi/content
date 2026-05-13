@@ -42,7 +42,6 @@ controls:
       - accounts_umask_etc_profile
       - accounts_umask_etc_profile.severity=high
       - var_accounts_user_umask=027
-      - var_accounts_user_umask.severity=high
 
   - id: 1.4_filesystem_permissions
     title: Ensure Filesystem Permissions are Secure
@@ -103,7 +102,6 @@ controls:
       - configure_crypto_policy
       - configure_crypto_policy.severity=high
       - var_system_crypto_policy=default_policy
-      - var_system_crypto_policy.severity=high
 
   - id: 2.1_auditd_configured
     title: Ensure Auditd is Configured
@@ -120,11 +118,8 @@ controls:
       - grub2_audit_backlog_limit_argument
       - grub2_audit_backlog_limit_argument.severity=low
       - var_auditd_max_log_file=6
-      - var_auditd_max_log_file.severity=high
       - var_auditd_max_log_file_action=rotate
-      - var_auditd_max_log_file_action.severity=high
       - var_audit_backlog_limit=8192
-      - var_audit_backlog_limit.severity=high
 
   - id: 2.2_audit_rules_configured
     title: Ensure Critical Audit Rules are Loaded
@@ -318,19 +313,14 @@ controls:
       - sshd_set_max_auth_tries
       - sshd_set_max_auth_tries.severity=high
       - var_sshd_set_maxstartups=10:30:60
-      - var_sshd_set_maxstartups.severity=high
       - var_sshd_max_sessions=10
-      - var_sshd_max_sessions.severity=high
       - var_sshd_set_login_grace_time=60
-      - var_sshd_set_login_grace_time.severity=high
       - sshd_set_idle_timeout
       - sshd_set_idle_timeout.severity=high
       - sshd_set_keepalive
       - sshd_set_keepalive.severity=high
       - var_rekey_limit_size=1G
-      - var_rekey_limit_size.severity=high
       - var_rekey_limit_time=1hour
-      - var_rekey_limit_time.severity=high
       - sshd_use_strong_rng
       - sshd_use_strong_rng.severity=high
 
@@ -409,7 +399,6 @@ controls:
       - selinux_policytype
       - selinux_policytype.severity=high
       - var_selinux_policy_name=targeted
-      - var_selinux_policy_name.severity=high
       - selinux_state
       - selinux_state.severity=high
       - package_mcstrans_removed
