@@ -1,0 +1,25 @@
+documentation_complete: true
+
+prodtype: openruyi
+
+title: 'Prohibit SSH service pre setting authorized_Keys'
+
+description: |-
+    Authorized_ Keys is the public key of the remote host, which users can
+    store in their home directory $HOME/. ssh/authorized_ In the keys file,
+    for public key authentication, you can directly log in to the system.
+
+    <p><tt>Use the grep command to view the configuration. If the return value is empty, it means authorized_keys is not preset:</tt></p>
+    <ul>
+    <li>
+    <pre>$ find /home/ /root/ -name authorized_keys </pre>
+    </li>
+    </ul>
+
+rationale: |-
+    If authorized is preset in the system_ Keys, and the server has enabled
+    the login method of public and private key authentication, allowing
+    attackers to bypass authentication and directly log in to the specified
+    system to attack it. So authorized cannot be preset in the system_ Keys.
+
+severity: high

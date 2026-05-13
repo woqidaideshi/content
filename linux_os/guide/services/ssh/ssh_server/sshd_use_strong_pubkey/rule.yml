@@ -1,0 +1,13 @@
+documentation_complete: true
+
+prodtype: openeuler2203,openeuler2403
+
+title: 'Use Only Strong Algorithms For Public Key'
+
+description: |-
+    Limit the algorithm of public key to strong algorithms.
+
+rationale: |-
+    Week algorithms will introduce risks.
+
+severity: high

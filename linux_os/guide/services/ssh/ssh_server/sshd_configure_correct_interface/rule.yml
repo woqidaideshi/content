@@ -1,0 +1,26 @@
+documentation_complete: true
+
+prodtype: openruyi
+
+title: 'SSH service interface should be configured correctly'
+
+description: |-
+    Generally, the server has multiple network cards and multiple
+    IP addresses. IP addresses should be planned for business and
+    management. Therefore, not every IP address needs to listen for
+    SSH connections. You can configure to limit SSH connections to
+    only specified IP addresses to reduce the attack surface.
+
+    <p><tt>If the listening address has been configured, you can query the corresponding configuration through the grep command.</tt></p>
+    <ul>
+    <li>
+    <pre>$ grep -i "^ListenAddress" /etc/ssh/sshd_config</pre>
+    </li>
+    </ul>
+
+
+rationale: |-
+    Unconfigured IP addresses cannot connect to the server through SSH.
+    It is recommended to plan and configure according to the actual situation.
+
+severity: low

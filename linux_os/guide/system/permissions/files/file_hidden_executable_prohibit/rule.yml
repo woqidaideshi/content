@@ -1,0 +1,16 @@
+documentation_complete: true
+
+prodtype: openruyi
+
+title: 'Disallow hidden executable files'
+
+description: |-
+    In the Linux system, files prefixed with "." are hidden files (except for "." and ".." in the current directory and upper directory), and executable hidden files are not allowed in the system.
+
+    The three files .bashrc, .bash_profile, and .bash_logout are the script files used when the system logs in/out of the shell after creating a user account. They are in line with industry practice and do not need to be deleted. Other hidden executable files must be deleted or removed. execute permission
+
+rationale: |-
+    NULL.
+
+severity: high
+
