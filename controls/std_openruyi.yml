@@ -424,5 +424,3 @@ controls:
     levels:
       - base
     status: manual
-    rules:
-      - periodic_compliance_scans.severity=medium
