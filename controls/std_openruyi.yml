@@ -230,7 +230,16 @@ controls:
       To select which timesync daemon to install and configure, use the
       profile variable var_timesync_service.
 
-  - id: 2.7_service_minimization
+  - id: 2.7_haveged_enabled
+    title: Ensure Haveged Enabled
+    levels:
+      - base
+    status: automated
+    rules:
+      - service_haveged_enabled
+      - service_haveged_enabled.severity=low
+
+  - id: 2.8_service_minimization
     title: Ensure Unnecessary Services are Removed
     levels:
       - base
